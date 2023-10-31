@@ -1,0 +1,35 @@
+.container {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 400px;
+    /* margin: 50px; */
+    border: 1px solid black;
+
+  }
+  .nums{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+  }
+  .mainCal{
+    padding: 5px;
+    border: 1px solid black;
+  }
+  .display{
+    width: 300px;
+    height: 50px;
+    border: 1px solid black;
+  }
+  .ico{
+    width: 50px;
+    height: 50px;
+    margin: 6px;
+    text-align: center;
+    line-height: 50px;
+    border: 1px solid black;
+  }
+  .ico:hover{
+    background-color: dimgray;
+    color: white;
+  }

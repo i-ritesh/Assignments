@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="mainCal">
+        <div class="display" id="mainDisplay"></div>
+        <div class="nums">
+          <div class="ico">C</div>
+          <div class="ico">%</div>
+          <div class="ico">x</div>
+          <div class="ico">/</div>
+          <div class="ico">7</div>
+          <div class="ico">8</div>
+          <div class="ico">9</div>
+          <div class="ico">*</div>
+          <div class="ico">4</div>
+          <div class="ico">5</div>
+          <div class="ico">6</div>
+          <div class="ico">-</div>
+          <div class="ico">1</div>
+          <div class="ico">2</div>
+          <div class="ico">3</div>
+          <div class="ico">+</div>
+          <div class="ico">00</div>
+          <div class="ico">0</div>
+          <div class="ico">.</div>
+          <div class="ico">=</div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    let display = document.getElementById("mainDisplay");
+let ico = document.querySelectorAll(".ico");
+let string = "";
+let sArr = ["+", "-", "/", "*", ".", "%"];
+
+Array.from(ico).forEach((ele) => {
+  ele.addEventListener("click", () => {
+    if(ele.innerHTML == "="){
+      string = eval(string); 
+      console.log(string)
+      display.innerText = string;
+    } 
+    else if(ele.innerHTML == "C"){
+      string = "";
+      display.innerText = string;
+    } 
+    else if(sArr.includes(ele.innerHTML)){
+      if(sArr.includes(string[string.length - 1])) {
+        console.log(string)
+      } 
+      else{
+        string += ele.innerText;
+        display.innerText = string;
+      }
+    } 
+    else{
+      string += ele.innerText;
+      display.innerText = string;
+    }
+  });
+});
+</script>
+</html>
